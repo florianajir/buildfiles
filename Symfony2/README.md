@@ -6,13 +6,11 @@
   * `composer` ([https://getcomposer.org/](https://getcomposer.org/))
   * `phing`
 
-You can install `phing` globally using `composer`.
-
-To install phing, 
+You can install `phing` globally using `composer` with `composer global require 'phing/phing=2.*'`
 
 ## Installation
 
-Copy [build.xml](PHP/build.xml) and [phpunit.xml.dist](PHP/phpunit.xml.dist) file at the root of your php project.
+Copy [build.xml](PHP/build.xml) file at the root of your project.
 
 If it's the first time you use it, run `phing install-requirements`.
 You should also add composer bin path to your `$PATH`. 

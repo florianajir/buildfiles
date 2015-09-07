@@ -6,9 +6,7 @@
   * `composer` ([https://getcomposer.org/](https://getcomposer.org/))
   * `phing`
 
-You can install `phing` globally using `composer`.
-
-To install phing, 
+You can install `phing` globally using `composer` with `composer global require 'phing/phing=2.*'`
 
 ## Installation
 
