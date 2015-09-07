@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="1001pharmacies/csv-bundle" basedir="./" default="help">
+<project name="1001pharmacies/goodfellas" basedir="./" default="help">
     <property name="builddir" value="build" />
 
     <target name="help">
@@ -106,7 +106,11 @@
     <target name="phpunit"
         description="Execute unit tests for development">
 
-        <exec executable="phpunit" logoutput="true" />
+        <exec executable="phpunit"
+            logoutput="true">
+            <arg value="-c" />
+            <arg path="app/phpunit.xml.dist" />
+        </exec>
     </target>
 
     <target name="ci:phpunit"
@@ -115,7 +119,7 @@
         <exec executable="phpunit"
             logoutput="true">
             <arg value="-c" />
-            <arg path="phpunit.xml.dist" />
+            <arg path="app/phpunit.xml.dist" />
             <arg value="--log-junit" />
             <arg path="${builddir}/reports/phpunit.xml" />
             <arg value="--coverage-clover" />
