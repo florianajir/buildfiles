@@ -30,7 +30,7 @@
     </target>
 
     <target name="ci"
-        depends="ci:cleanup,ci:composer,install-requirements"
+        depends="ci:cleanup,ci:composer"
         description="Run tests for continous integration">
 
         <phingcall target="ci:lint" />
