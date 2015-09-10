@@ -164,7 +164,8 @@
         description="Look for several potential problems">
 
         <phpmd>
-            <fileset dir=".">
+            <fileset dir="src">
+                <include name="**/*.php" />
                 <exclude name="vendor/" />
             </fileset>
         </phpmd>
@@ -174,7 +175,8 @@
         description="Look for several potential problems">
 
         <phpmd>
-            <fileset dir=".">
+            <fileset dir="src">
+                <include name="**/*.php" />
                 <exclude name="vendor/" />
             </fileset>
             <formatter type="xml" outfile="${builddir}/reports/pmd.xml"/>
@@ -222,7 +224,7 @@
         <exec executable="phpmetrics"
             logoutput="true">
             <arg value="--report-cli"/>
-            <arg value="./"/>
+            <arg value="./src"/>
         </exec>
     </target>
 
@@ -233,7 +235,7 @@
             logoutput="true">
             <arg value="--report-xml=${builddir}/reports/phpmetrics.xml"/>
             <arg value="--report-html=${builddir}/reports/phpmetrics.html"/>
-            <arg value="./"/>
+            <arg value="./src"/>
         </exec>
     </target>
 
