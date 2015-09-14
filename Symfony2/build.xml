@@ -162,23 +162,12 @@
 
     <target name="phpmd"
         description="Look for several potential problems">
-
-        <phpmd>
-            <fileset dir="src">
-                <include name="**/*.php" />
-                <exclude name="vendor/" />
-            </fileset>
-        </phpmd>
+        <phpmd dir="./src"/>
     </target>
 
     <target name="ci:phpmd"
         description="Look for several potential problems">
-
-        <phpmd>
-            <fileset dir="src">
-                <include name="**/*.php" />
-                <exclude name="vendor/" />
-            </fileset>
+        <phpmd  dir="./src"/>
             <formatter type="xml" outfile="${builddir}/reports/pmd.xml"/>
         </phpmd>
     </target>
