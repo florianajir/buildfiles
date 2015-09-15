@@ -83,6 +83,7 @@
             <fileset dir=".">
                 <include name="src/**/*.php"/>
                 <exclude name="vendor/"/>
+                <exclude name="app/cache/"/>
             </fileset>
         </phplint>
     </target>
@@ -99,6 +100,7 @@
             <fileset dir=".">
                 <include name="src/**/*.php"/>
                 <exclude name="vendor/"/>
+                <exclude name="app/cache/"/>
             </fileset>
         </phplint>
     </target>
@@ -144,6 +146,7 @@
             <fileset dir="./">
                 <include name="src/**/*.php" />
                 <exclude name="vendor/" />
+                <exclude name="app/cache/"/>
             </fileset>
         </phpcodesniffer>
     </target>
@@ -154,9 +157,9 @@
             <fileset dir="./">
                 <include name="src/**/*.php" />
                 <exclude name="vendor/" />
+                <exclude name="app/cache/"/>
             </fileset>
-            <formatter type="checkstyle"
-                outfile="${builddir}/reports/checkstyle.xml" />
+            <formatter type="checkstyle" outfile="${builddir}/reports/checkstyle.xml" />
         </phpcodesniffer>
     </target>
 
@@ -186,11 +189,7 @@
     <target name="ci:phpcpd"
         description="Detects duplicated code and generate report">
 
-        <phpcpd>
-            <fileset dir=".">
-                <exclude name="vendor/" />
-                <include name="src/**/*.php" />
-            </fileset>
+        <phpcpd dir="./src">
             <formatter type="pmd" outfile="${builddir}/reports/cpd.xml"/>
         </phpcpd>
     </target>
@@ -202,6 +201,7 @@
             <fileset dir="./">
                 <exclude name="vendor/" />
                 <include name="src/**/*.php" />
+                <exclude name="app/cache/"/>
             </fileset>
             <logger type="jdepend-xml" outfile="${builddir}/reports/pdepend.xml"/>
         </phpdepend>
@@ -236,6 +236,7 @@
                 <include name="src/**/*.php" />
                 <include name="*.php" />
                 <exclude name="vendor/" />
+                <exclude name="app/cache/"/>
             </fileset>
         </phploc>
     </target>
@@ -252,6 +253,7 @@
                 <include name="src/**/*.php" />
                 <include name="*.php" />
                 <exclude name="vendor/" />
+                <exclude name="app/cache/"/>
             </fileset>
         </phploc>
     </target>
