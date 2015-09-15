@@ -165,12 +165,12 @@
 
     <target name="phpmd"
         description="Look for several potential problems">
-        <phpmd dir="./src"/>
+        <phpmd file="./src"/>
     </target>
 
     <target name="ci:phpmd"
         description="Look for several potential problems">
-        <phpmd  dir="./src">
+        <phpmd file="./src">
             <formatter type="xml" outfile="${builddir}/reports/pmd.xml"/>
         </phpmd>
     </target>
@@ -188,8 +188,12 @@
 
     <target name="ci:phpcpd"
         description="Detects duplicated code and generate report">
-
-        <phpcpd dir="./src">
+        <phpcpd>
+            <fileset dir=".">
+                <exclude name="vendor/" />
+                <exclude name="app/cache/" />
+                <include name="src/**/*.php" />
+            </fileset>
             <formatter type="pmd" outfile="${builddir}/reports/cpd.xml"/>
         </phpcpd>
     </target>
