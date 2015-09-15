@@ -170,7 +170,7 @@
 
     <target name="ci:phpmd"
         description="Look for several potential problems">
-        <phpmd  dir="./src"/>
+        <phpmd  dir="./src">
             <formatter type="xml" outfile="${builddir}/reports/pmd.xml"/>
         </phpmd>
     </target>
